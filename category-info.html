@@ -13,6 +13,26 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  
+  <style>
+    #info-user {
+      font: weight 500;
+      color: white;
+      float: right;
+      margin-top: 7px;
+      border-width: 2px;
+    }
+
+    #salir {
+      border-radius: 10px;
+      float: right;
+      background-color: royalblue;
+      box-shadow: slategray;
+      color: whitesmoke;
+
+    }
+  </style>
+
 </head>
 
 <body>
@@ -23,6 +43,10 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div id="info-user" style="display:none;">   
+        <p id="user"> </p>
+         <button id="salir"> Salir</button>
+       </div>
     </div>
   </nav>
   <main role="main">
