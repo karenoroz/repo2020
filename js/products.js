@@ -35,6 +35,7 @@ function sortProducts(criterio,array){
 
     }
 
+ 
 
 function showProductsList(array) {
 
@@ -59,8 +60,7 @@ if(buscar==undefined || resultSearch.toLowerCase().indexOf(buscar) != -1){
                         <p>` + product.description + `</p>
                         </div>
                        <small class="text-muted">` + product.soldCount + ` artículos</small>
-
-                    </div>
+                                          </div>
                 </div>
             </div>
         </div>
@@ -163,4 +163,7 @@ document.getElementById("limpiarbuscador").addEventListener("click", function ()
  document.getElementById("buscador").style.backgroundColor = "lightblue";
  
 
- 
+ document.getElementById("prod-list-container").addEventListener("click", function () {
+    window.location = 'product-info.html';
+   
+ });
