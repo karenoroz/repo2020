@@ -13,25 +13,8 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!--link estrellas-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
   <style>
-    body {
-      background-color: rgb(236, 236, 236);
-    }
-
-    .gallery {
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-      justify-items: center;
-      background-color: black;
-
-
-    }
-
     #info-user {
       font: weight 500;
       color: white;
@@ -48,62 +31,6 @@
       color: whitesmoke;
 
     }
-
-
-    #productName {
-      color: #631010;
-      font-weight: 300;
-      font-style: normal;
-      background-color: (#fff, #a1a1a1, 82%);
-    }
-
-
-    .checked {
-      color: gold;
-      font-size: larger;
-
-    }
-
-    #newComment {
-      background-color: rgba(204, 204, 204, 0.281);
-      border-color: rgb(119, 40, 40);
-      border-width: 2px;
-
-    }
-
-    #volverProd {
-      color: black;
-      display: inline-block;
-      padding: 8px 16px;
-    }
-
-    #volverProd:hover {
-      background-color: rgb(97, 16, 16);
-      color: white;
-    }
-
-    .star-rating {
-      direction: rtl;
-      display: inline-block;
-      padding: 20px
-    }
-
-    .star-rating input[type=radio] {
-      display: none
-    }
-
-    .star-rating label {
-      color: rgb(133, 142, 192);
-      font-size: 40px;
-      padding: 0;
-      cursor: pointer;
-    }
-
-    .star-rating label:hover,
-    .star-rating label:hover~label,
-    .star-rating input[type=radio]:checked~label {
-      color: #ffbf00
-    }
   </style>
 
 </head>
@@ -116,99 +43,19 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <div id="info-user" style="display:none;">
+      <div id="info-user" style="display:none;">   
         <p id="user"> </p>
-        <button id="salir"> Salir</button>
-      </div>
+         <button id="salir"> Salir</button>
+       </div>
     </div>
   </nav>
-
-
   <div class="container p-5">
-
-    <div id="product-inf">
-
-      <h1 style="font-weight: bolder;font-size:xxx-large;" id="productName"></h1>
-
-      <hr class="my-3">
-
-      <h5><strong>Descripción</strong></h5>
-      <p id="productDescription"></p>
-
-      <h5><strong>Costo</strong></h5>
-      <p id="productCost"></p>
-
-      <h5><strong>Cantidad de productos vendidos</strong></h5>
-      <p id="productSoldCount"></p>
-
-      <h5><strong>Categoría del producto</strong></h5>
-      <p id="productCategory"></p>
-      <div style=" text-align: center; align-items: center;">
-        <h5><strong>Imágenes ilustrativas</strong></h5>
-        <br>
-        <div class="gallery" id="productImagesGallery">
-        </div>
-      </div>
-
-      <br>
+    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
+      <h4 class="alert-heading">¡A trabajar! :)</h4>
+      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
       <hr>
-
-      <h4 style="background-color: rgba(176, 196, 222, 0.404);">Comentarios de los usuarios: </h4>
-
-      <div id="comentarios">
-        <div id="estrellas">
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-        </div>
-      </div>
-
-
-
-      <div id="nuevoComentario" style="display: none;">
-
-        <p><strong>Deja un comentario: </strong> </p>
-        <textarea id="newComment" rows="8" cols="60"></textarea><br><br>
-
-        <p><strong>Calificación: </strong> </p>
-        <div class="star-rating">
-          <input id="star-5" type="radio" name="rating" value="5" />
-          <label for="star-5" title="5 stars">
-            <i class="active fa fa-star"></i>
-          </label>
-
-          <input id="star-4" type="radio" name="rating" value="4" />
-          <label for="star-4" title="4 stars">
-            <i class="active fa fa-star"></i>
-          </label>
-
-          <input id="star-3" type="radio" name="rating" value="3" />
-          <label for="star-3" title="3 stars">
-            <i class="active fa fa-star"></i>
-          </label>
-
-          <input id="star-2" type="radio" name="rating" value="2" />
-          <label for="star-2" title="2 stars">
-            <i class="active fa fa-star"></i>
-          </label>
-
-          <input id="star-1" type="radio" name="rating" value="1" checked />
-          <label for="star-1" title="1 star">
-            <i class="active fa fa-star"></i>
-          </label>
-
-        </div>
-      </div>
-      <div>
-        <button class="btn btn-secondary" id="EnviarComment"> Enviar </button>
-      </div>
-      <br><br>
-      <a href="products.html" id="volverProd">Volver a productos</a>
+      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
-
-  </div>
   </div>
   <footer class="text-muted">
     <div class="container">
@@ -231,7 +78,6 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
-
 </body>
 
 </html>

@@ -54,13 +54,10 @@ document.addEventListener("DOMContentLoaded", function(e){
     usuario= JSON.parse (usuario);
     user.innerText=user.innerHTML + 'Usuario logueado: ' + usuario.email;
     infoUser.style = 'display:inline-block';
-    //linea para mostrar comentario nuevo
  }
 
 document.getElementById("salir").addEventListener("click", function (){
   localStorage.removeItem('Usuario');
   window.location = 'index.html';
 })
-
-
 });
