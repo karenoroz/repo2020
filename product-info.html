@@ -49,14 +49,34 @@
        </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+  <div class="container p-5" id="product-info container"> <!--container para json product-->
+    <h3 id="productName"></h3>
+    <hr class="my-3">
+    <dl>
+      <dt>Descripción</dt>
+      <dd>
+        <p id="productDescription"></p>
+      </dd>
+
+      <dt>Cantidad de productos vendidos</dt>
+      <dd>
+        <p id="productSoldCount"></p>
+      </dd>
+
+      <dt>Categoría</dt>
+      <dd>
+        <p id="category"></p>
+      </dd>
+
+      <dt>Imágenes ilustrativas</dt>
+      <dd>
+        <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+        </div>
+      </dd>
+    </dl>
+    <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos relacionados</a>
   </div>
+     
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -78,6 +98,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  
 </body>
 
 </html>
