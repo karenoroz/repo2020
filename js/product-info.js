@@ -126,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         if (resultObj.status === "ok") {
             product = resultObj.data;
+            productsArray=resultObj.data;
            
             let productNameHTML = document.getElementById("productName");
             let productDescriptionHTML = document.getElementById("productDescription");
@@ -140,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             productCostHTML.innerHTML = product.currency + ' ' + product.cost;
             //Muestro las imagenes
             showImagesGallery(product.images);
-            showRelatedproducts(array, relacionadosProdArray)
+            showRelatedproducts(productsArray, product.relatedProducts)
         }
     });
 
