@@ -1,0 +1,13 @@
+#user{
+      background-color:black;
+
+    }
+
+    #info-user {
+      font: weight 400;
+      color: white;
+      float: right;
+      margin-top: 0px;
+      border-width: 2px;
+    }
+

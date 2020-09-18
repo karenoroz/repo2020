@@ -11,6 +11,7 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="C:\Users\karoz\Desktop\entrega 4 - copia\css\font-awesome.min.css">
 
   <style>
     .bd-placeholder-img {
@@ -36,18 +37,10 @@
       border-width: 2px;
     }
 
-    #salir {
-      border-radius: 10px;
-      float: right;
-      background-color: royalblue;
-      box-shadow: slategray;
-      color: whitesmoke;
-
-    }
- 
-  </style>
+     </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
 </head>
 
@@ -58,11 +51,14 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <div id="info-user" style="display:none;">   
-        <p id="user"> </p>
-         <button id="salir"> Salir</button>
-       </div>
+      <div class="dropdown" id="info-user" style="display:none;">
+      <button id="user" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: black;">
+          <a class="dropdown-item" href="cart.html" style="color:turquoise;font-weight: 300; font-size:medium;">Ver mi carrito  <i class="fas fa-shopping-cart"></i></a>
+          <a class="dropdown-item" href="my-profile.html" style="color:turquoise;font-weight: 300; font-size:medium; background-color: cadetblue;">Mi perfil <i class="fas fa-user-circle"></i></a>
+          <a id="salir" class="dropdown-item" style="color:turquoise;font-weight: 300;  font-size:medium;">Salir <i class="fas fa-sign-out-alt"></i></a>
+        </div>
+      </div>
     </div>
   </nav>
   <div class="container p-5">

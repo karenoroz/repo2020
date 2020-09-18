@@ -4,24 +4,55 @@
 
 var product = {};
 var commentsArray = [];
+var productsArray= [];
+var array=[];
+var relacionadosProdArray=[];
+
+
 
 
 function showImagesGallery(array) {
 
     let htmlContentToAppend = "";
 
-    for (let i = 0; i < array.length; i++) {
+    let i = 0; i < array.length; i++ 
         let images = array[i];
 
         htmlContentToAppend += `
-        <div class="gallery">
-                <img style="padding: 10px;" src="` + images + `" alt="">
-            </div>
-        `
+        <div id="productImagesGallery">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img style="padding: 10px;"src="${array[0]}" class="d-block w-100" alt="Onix bordó en marcha">
+    </div>
+    <div class="carousel-item">
+      <img style="padding: 10px;"src="${array[1]}" class="d-block w-100" alt="Onix bordó Vista Frontal ">
+    </div>
+    <div class="carousel-item">
+      <img style="padding: 10px;"src="${array[2]}" class="d-block w-100" alt="Vista en detalle ruedas Onix gris ">
+    </div>
+    <div class="carousel-item">
+      <img style="padding: 10px;"src="${array[3]}" class="d-block w-100" alt="Onix gris en marcha">
+    </div>
+    <div class="carousel-item">
+      <img style="padding: 10px;"src="${array[4]}" class="d-block w-100" alt=" onix bordó vista lateral">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>   
+</div>     `
+        
 
         document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
     }
-}
+
 
 function showProductComment(commentsArray) {
     let comments = "<hr>";
@@ -66,6 +97,19 @@ function showProductComment(commentsArray) {
     }
      
      
+    function showRelatedproducts(array, relacionadosProdArray){
+        let contenido='<hr>';
+        relacionadosProdArray.forEach(function(i){
+            contenido+='<strong>'+'Nombre: ' + array[i].name + '</strong>'+'<br>';
+            contenido+='Descripcion: ' + array[i].description + '<br>';
+            contenido+='Precio: ' + array[i].currency + array[i].cost + '<br>';
+            contenido+='<div id="imagenRelacionados"><img style="width:190px; height:140px;" src="'+ array[i].imgSrc+'"></div><br>';
+            contenido+='<a href="product-info.html"><button class="btn btn-secondary" style="float: right;">Ver producto</button> </a><br>';
+    
+        });
+    document.getElementById("relatedProducts").innerHTML=contenido;
+    }
+    
     
 
  
@@ -96,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             productCostHTML.innerHTML = product.currency + ' ' + product.cost;
             //Muestro las imagenes
             showImagesGallery(product.images);
+            showRelatedproducts(array, relacionadosProdArray)
         }
     });
 
@@ -109,6 +154,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     });
    
+    getJSONData(PRODUCTS_URL).then(function(resultObj){
+        if(resultObj.status==="ok"){
+            productsArray=resultObj.data;
+
+            showRelatedproducts(productsArray, product.relatedProducts);
+        }
+    })
  
    document.getElementById("EnviarComment").addEventListener("click", function (e) {
     let now= new Date();       //aca declaro la variable de la fecha
