@@ -8,15 +8,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
-
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css" rel="stylesheet">
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="C:\Users\karoz\Desktop\entrega 4 - copia\css\font-awesome.min.css">
-  
-  
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
+
+
+
+
 
   <style>
+    body {
+      background-color: #43494E;
+    }
+
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -32,7 +40,7 @@
       }
     }
 
-    
+
     #info-user {
       font: weight 500;
       color: white;
@@ -41,12 +49,32 @@
       border-width: 2px;
     }
 
-   
+    #linea {
+      display: inline-block;
+    }
 
+    #linea2 {
+      display: inline-block;
+    }
+
+    #linea3 {
+      display: inline-block;
+    }
+
+    #linea4 {
+      display: inline-block;
+    }
+
+    h3,
+    i {
+      display: inline-block;
+    }
+
+    #nivel {
+      background-color: rgb(163, 45, 77);
+    }
   </style>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-  <link href="css/dropzone.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -57,23 +85,175 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="dropdown" id="info-user" style="display:none;">
-      <button id="user" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+        <button id="user" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"></button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: black;">
-          <a class="dropdown-item"href="cart.html" style="color:turquoise;font-weight: 300; font-size:medium; background-color: cadetblue;">Ver mi carrito <i class="fas fa-shopping-cart"></i></a>
-          <a class="dropdown-item" href="my-profile.html" style="color:turquoise;font-weight: 300; font-size:medium;">Mi perfil <i class="fas fa-user-circle"></i></a>
-          <a id="salir" class="dropdown-item" style="color:turquoise;font-weight: 300; font-size:medium;">Salir <i class="fas fa-sign-out-alt"></i></a>
+          <a class="dropdown-item" href="cart.html"
+            style="color:turquoise;font-weight: 300; font-size:medium; background-color: cadetblue;">Ver mi carrito <i
+              class="fas fa-shopping-cart"></i></a>
+          <a class="dropdown-item" href="my-profile.html" style="color:turquoise;font-weight: 300; font-size:medium;">Mi
+            perfil <i class="fas fa-user-circle"></i></a>
+          <a id="salir" class="dropdown-item" style="color:turquoise;font-weight: 300; font-size:medium;">Salir <i
+              class="fas fa-sign-out-alt"></i></a>
         </div>
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+
+  <!-------------------------------------------tabla de productos carrito---------------------------------------------------------------->
+  <div>
+    <table class="table table-bordered table-hover data-toggle table-striped table-dark table-sm"
+      data-page-list="[10, 25, All]" data-search="true" data-page-number="1" data-search="true" data-pagination="true"
+      data-show-columns="true">
+      <div id="nivel">
+        <i class="fa fa-shopping-cart" aria-hidden="true"
+          style="padding: 1cm; font-size: xx-large;color: rgb(242, 242, 242);"></i>
+        <h3 id="tituloCarrito" style="color: white; font-family: Georgia, 'Times New Roman', Times, serif;">
+          &nbsp;&nbsp; Carrito de compras</h3>
+      </div>
+
+      <thead>
+        <tr class="tr-class-1">
+          <th data-field="picture" rowspan="2" data-valign="middle">Imagen ilustrativa</th>
+
+        </tr>
+        <tr class="tr-class-2">
+          <th data-field="name">Artículo</th>
+          <th data-field="cant">Cantidad</th>
+          <th data-field="moneda">Moneda</th>
+          <th data-field="precio">Precio Unitario</th>
+          <th data-field="totalisimo">Subtotal en USD</th>
+        </tr>
+      </thead>
+
+      <tbody id="listado">
+    </table>
   </div>
+
+
+  <!----------------------------------------------------- zonas de Envios---------------------------------------------------------------------->
+  <br>
+  <div class="containerEnvios" style="color: #FFFFFF;">
+    <div id="zonasdeEnvio">
+      <h4> Zonas de envío</h4>
+      <div>
+        <input id="montevideo" name="envioZona" type="radio" value="2" checked="" required="">
+        <label for="montevideo"> Montevideo</label><br>
+
+        <input id="sur" name="envioZona" type="radio" value="4" required="">
+        <label for="sur"> Sur del Río Negro</label><br>
+
+        <input id="norte" name="envioZona" type="radio" value="6" required="">
+        <label for="norte"> Norte del Río Negro</label><br>
+      </div>
+      <hr>
+
+      <!---------------------------------------------------------- tipo de envio------------------------------------------------------------------->
+
+      <div id="tipoDeEnvio">
+        <label for="tipodeEnvio">Seleccione un tipo de envío: </label><br>
+
+        <input class="seleccionEnvio" id="estandar" name="envio" type="radio" value="5" checked="" required=""
+          onchange="toggle(this)">
+        <label for="estandar"> Standard</label><br>
+
+        <input class="seleccionEnvio" id="express" name="envio" type="radio" value="7" required=""
+          onchange="toggle(this)">
+        <label for="express"> Express </label><br>
+
+        <input class="seleccionEnvio" id="premium" name="envio" type="radio" value="15" required=""
+          onchange="toggle(this)">
+        <label for="retiro"> Premium </label><br> <br>
+      </div>
+      <p id="linea">
+        ------------------------------------------------------------------------------------------------------</p>
+      <i style="font-size: xx-large;" id="linea" class="fas fa-envelope"></i>
+      <p id="linea">
+        -----------------------------------------------------------------------------------------------------</p>
+
+
+      <!--------------------------------------------------divs ocultos de envios------------------------------------------------------------->
+      <div id="enviosContainer" style="background-color: rgba(140, 140, 140, 0.446), 238, 250; text-align: center;">
+        <div id="envEstandar" style="display: block;">
+          <h6 id="linea2" style="font-size: x-large;"> Standard </h6>
+          <br> <br>
+          <i style="font-size: xx-large;" id="linea2" class="fas fa-truck"></i>
+          <br><br>
+          <p> Tiempo estimado de envío: 12 a 15 días </p>
+          <p> Costo del envío: 5% sobre el subtotal </p>
+        </div>
+
+        <div id="envExpress" style="display: none;">
+          <h6 style="font-size: x-large;" id="linea3"> Express </h6>
+          <br> <br>
+          <i style="font-size: xx-large;" id="linea3" class="fas fa-shipping-fast"></i>
+          <br><br>
+          <p> Tiempo estimado de envío: 5 a 8 días </p>
+          <p> Costo del envío: 7% sobre el subtotal </p>
+        </div>
+
+        <div id="envPremium" style="display: none;">
+          <h6 style="font-size: x-large;" id="linea4"> Premium </h6>
+          <br> <br>
+          <i style="font-size: xx-large;" id="linea4" class="fas fa-hourglass-start"></i>
+          <br><br>
+          <p> Tiempo estimado de envío: 2 a 5 días</p>
+          <p> Costo del envío: 15% sobre el subtotal </p>
+        </div>
+      </div>
+      <br> <br>
+
+    </div>
+
+    <!-----------------------------------------------------------------Total------------------------------------------------------------------->
+    <table class="table table-bordered table-hover data-toggle table-striped table-dark table-sm"
+      data-page-list="[10, 25, All]" data-search="true" data-page-number="1" data-search="true" data-pagination="true"
+      data-show-columns="true">
+      <tfoot>
+        <tr>
+          <td colspan="3" style="height: 1cm; text-size-adjust: 10px; font-size: large; width: ;"> Costo de Envío</td>
+          <td style="font-size: large" id="costoEnvio"></td>
+        </tr>
+        <tr>
+          <td colspan="3" style="height: 1cm; text-size-adjust: 10px; font-size: large;"> Costo Total</td>
+          <td style="font-size: large" id="totalPrecio"></td>
+        </tr>
+      </tfoot>
+    </table>
+<br>
+
+    <!---------------------------------------------------------------boton comprar--------------------------------------------------------------->
+   <div  style="width: fit-content; align-items: center; align-self:center; text-align: center; margin-left:45%;">
+    <button class="btn btn-block btn-primary" data-toggle="modal" style="font-size: xx-large" data-target="#modalPagar">Comprar</button>
+  </div>
+
+  <!---------------------------------------------------------funcion mostrar div de envios-------------------------------------------------------->
+
+
+  <script type="text/javascript">
+
+    function toggle(elemento) {
+      if (elemento.value == "5") {
+        document.getElementById("envEstandar").style.display = "block";
+        document.getElementById("envExpress").style.display = "none";
+        document.getElementById("envPremium").style.display = "none";
+      } else {
+        if (elemento.value == "7") {
+          document.getElementById("envExpress").style.display = "block";
+          document.getElementById("envEstandar").style.display = "none";
+          document.getElementById("envPremium").style.display = "none";
+        } else {
+          if (elemento.value == "15") {
+            document.getElementById("envPremium").style.display = "block";
+            document.getElementById("envEstandar").style.display = "none";
+            document.getElementById("envExpress").style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+
+  <!--------------------------------------------------------- div de spinners-------------------------------------------------------->
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -82,6 +262,8 @@
       <div></div>
     </div>
   </div>
+
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
