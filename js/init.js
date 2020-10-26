@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     usuario= JSON.parse (usuario);
     user.innerText=user.innerHTML + 'Usuario logueado: ' + usuario.email;
     infoUser.style = 'display:inline-block';
+    document.getElementById('userLogin').style.display="none";
     //linea para mostrar comentario nuevo
  }
 
