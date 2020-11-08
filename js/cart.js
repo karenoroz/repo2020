@@ -88,7 +88,7 @@ function showProducts(array) {
         <tr>
         <td><img src='${articles.src}' width="170px"></td>
         <td>${articles.name}</td>
-        <td><input style="width:60px;" onchange="calculoSub(${subTotal},${i})" type="number" id="cantidad${i}" value="${articles.count}" required min="1"></td>
+        <td><input style="width:60px;" onchange="calculoSub(${costDolar},${i})" type="number" id="cantidad${i}" value="${articles.count}" required min="1"></td>
         <td>USD</td>
         <td>${subTotal}</td>
         <td><span id="subTotalProd${i}" class="subtotal" style="font-weight:bold;"> ${subTotal}</span></td>

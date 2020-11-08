@@ -23,88 +23,169 @@
       margin-top: 7px;
       border-width: 2px;
     }
-
-    </style>
+  </style>
 
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="cover.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <button id="userLogin" class="btn btn-secondary btn-sm " style="display: block" type="button"><a href="index.html">Log in</a></button>
-      <div class="dropdown" id="info-user" style="display:none;">
-      <button id="user" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: black;">
-          <a class="dropdown-item" href="cart.html" style="color:turquoise;font-weight: 300; font-size:medium;">Ver mi carrito  <i class="fas fa-shopping-cart"></i></a>
-          <a class="dropdown-item" href="my-profile.html" style="color:turquoise;font-weight: 300; font-size:medium;">Mi perfil <i class="fas fa-user-circle"></i></a>
-          <a id="salir" class="dropdown-item" style="color:turquoise;font-weight: 300;  font-size:medium;">Salir <i class="fas fa-sign-out-alt"></i></a>
+  <nav class="site-header sticky-top py-1 bg-dark " style="width:auto; max-width: 100%;">
+    <div class="container d-flex flex-column  m-auto p-auto align-items-center">
+      <div class="row ">
+        <div class="col-sm-12-text-align-center col-md-auto m-0 p-2">
+          <a class="py-2 d-none d-md-inline-block" href="cover.html">Inicio</a>
+          <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+          <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+          <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         </div>
+
+        <div class="col d-md-none d-lg-none d-sm-inline-block col-sm-auto p-0 m-0">
+          <nav class="navbar navbar-light light-blue lighten-4 p-0" style="height: auto;">
+           
+            <!-- Collapse button -->
+            <button style="width: fit-content;height: fit-content;" class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+              aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i
+                  class="fas fa-bars fa-1x"></i></span></button>
+          
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+          
+              <!-- Links -->
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="cover.html">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="categories.html">Categorías</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="products.html">Productos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="sell.html">Vender</a>
+                </li>
+              </ul>   
+            </div>
+          </nav>
+        </div>
+
+        <div class="col-lg-auto pt-1 col-md-auto align-items-center m-auto">
+          <button id="userLogin" class="btn btn-secondary btn-sm " style="display: block;" type="button"><a
+              href="index.html">Log in</a>
+            </button>
+          <div class="dropdown" id="info-user" style="display:none;">
+            <button id="user" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"></button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: black;">
+              <a class="dropdown-item" href="cart.html" style="color:turquoise;font-weight: 300; font-size:medium;">Ver
+                mi
+                carrito <i class="fas fa-shopping-cart"></i></a>
+              <a class="dropdown-item" href="my-profile.html"
+                style="color:turquoise;font-weight: 300; font-size:medium;">Mi
+                perfil <i class="fas fa-user-circle"></i></a>
+              <a id="salir" class="dropdown-item" style="color:turquoise;font-weight: 300;  font-size:medium;">Salir <i
+                  class="fas fa-sign-out-alt"></i></a>
+            </div>
+          </div>
+        </div>
+        </div>
+
       </div>
-    </div>
+  
   </nav>
 
 
-  <div class="container p-5">
+  <div class="container-fluid m-auto p-auto" style="width:fit-content; height:auto; background-color: rgba(151, 151, 153, 0.35);">
+    <div class="row">
+           <div class="col-lg-4 col-md-12"style="background-color: rgb(118, 165, 196);">
+            <div class="row d-none d-md-block">
+              <div class="col-lg-4-text-align-center col-md-4-text-align-center p-2">
+              <div id="ordenar-productos" style="text-align: center;">
 
-    <div id="ordenar-productos" style="text-align: left;">
+          <p> <strong>Ordenar por:</strong></p>
+          <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
 
-      <p> Ordenar por:</p>
-      <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+            <label class="btn btn-light" id="sortPriceAsc">
+              <input type="radio" name="options" autocomplete="off"> <i class="fas fa-sort-amount-up mr-1"></i>usd-USD
+            </label>
 
-        <label class="btn btn-light" id="sortPriceAsc">
-          <input type="radio" name="options" autocomplete="off"> <i class="fas fa-sort-amount-up mr-1"></i>usd-USD
-        </label>
+            <label class="btn btn-light" id="sortPriceDesc">
+              <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>USD-usd
+            </label>
 
-        <label class="btn btn-light" id="sortPriceDesc">
-          <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>USD-usd
-        </label>
-
-        <label class="btn btn-light" id="sortRelevanceDesc">
-          <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i> Cant.
-        </label>
-
-      </div>
-      
-      <div id="filtro-productos">
-        <p style="font-weight: 500;"> Filtrar por precio: </p>
-
-        <input type="number" placeholder="min." id="min-range"> <br>
-        <input type="number" placeholder="max." id="max-range"> <br>
-
-        <button id="filtrar"> Filtrar </button>
-        <button id="limpiar"> Limpiar </button>
-
-        <div id="buscar" style="text-align: right">
-          <label> Buscar </label>
-          <input type="search" id="buscador">
-          <button id="limpiarbuscador"> Limpiar</button>
-        </div>
-
-        <br>
-
-        <h4 style="top: 0; text-align: center;">Productos</h4>
-        <p style="text-align: center;">Verás aquí todos los productos del sitio.</p>
-        <div class="row">
-          <div class="list-group" id="prod-list-container">
+            <label class="btn btn-light" id="sortRelevanceDesc">
+              <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i> Cant.
+            </label>
           </div>
+        </div>    
+      </div> 
+    </div>
+  
+
+    <div class="row-text-align-center p-2  d-none d-md-block">
+      <div class="col-lg-4-text-align-center col-md-4-text-align-center p-2">
+        <div id="filtro-productos" style="text-align: center;">
+          <p style="font-weight: 500;"> <strong>Filtrar por precio: </strong></p>
+
+          <input type="number" placeholder="min." id="min-range"> <br>
+          <input type="number" placeholder="max." id="max-range"> <br>
+
+          <button id="filtrar"> Filtrar </button>
+          <button id="limpiar"> Limpiar </button>
+
         </div>
       </div>
-      <footer class="text-muted bg-light">
-        <div class="container">
-        </div>
     </div>
-    <p class="float-right;">
+  
+
+    <div class="row ">
+      <div class="col-lg-4-text-align-center col-md-4-text-align-center col-sm-12-text-align-center ml-auto  col-sm mt-3  m-2">
+      <div id="buscar" style="text-align: center; align-self: center; margin-left: auto; margin-right: auto;">
+        <label><strong>Buscar</strong>  </label>
+        <input type="search" id="buscador">
+        <button id="limpiarbuscador"> Limpiar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+     <div class="col-lg-8 text-align-center col-md-6-text-align-center p-2" >
+      <h4 style="text-align: center;">Productos</h4>    
+    <p style="text-align: center;">Verás aquí todos los productos del sitio.</p> 
+
+        <div class="row" style="width: auto; height: auto;" id="prod-list-container">
+        </div>
+
+      </div>
+  </div>
+</div>
+
+
+
+<div class="container" style="position: relative; text-align: center; align-self: center;">
+  <div class="row">
+    <div class="col">
+      <footer class="text-muted bg-light">
+    <p>
       <a href="#">Volver arriba</a>
     </p>
+  
+  </div>
+</div>
+    <div class="row">
+      <div class="col" >
     <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col">
     <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
   </div>
   </footer>
-  <div id="spinner-wrapper">
+</div>
+
+
+<div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
       <div></div>
